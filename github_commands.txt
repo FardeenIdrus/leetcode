@@ -1,0 +1,43 @@
+Before you start working (Pull latest changes):
+
+1) git pull origin main
+
+
+After you make changes (Push your changes):
+
+git add .
+git commit -m "your message here"
+git push origin main
+
+Complete workflow example:
+# 1. Check current status
+git status
+
+# 2. Pull latest changes from GitHub (do this BEFORE coding)
+git pull origin main
+
+# 3. Make your code changes...
+
+# 4. Check what you changed
+git status
+
+# 5. Stage your changes
+git add .
+
+# 6. Commit with a message
+git commit -m "solved find closest number problem"
+
+# 7. Push to GitHub
+git push origin main
+
+# Fetch info from GitHub without merging
+git fetch origin
+
+# Compare your local branch with remote
+git status
+
+# Start of your coding session
+cd ~/leetcode
+git pull origin main
+
+# Now start coding...
