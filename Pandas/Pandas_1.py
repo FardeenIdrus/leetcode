@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-#PART 1: Creating a DataFrame from a list
+#PART 1: Creating a DataFrame from a list -> Each item becomes a new row
 
 lst = ["this", "is", "my", "first", "pandas", "project"]
 
