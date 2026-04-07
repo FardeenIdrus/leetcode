@@ -1,7 +1,7 @@
 from typing import List 
 class Solution:
     def hasDuplicate(self, nums:List[int]) -> bool:
-        thisset = {""}
+        thisset = set()
         for i in range (len(nums)):
             if nums[i] not in thisset:
                 thisset.add(nums[i])
