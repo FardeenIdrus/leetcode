@@ -21,3 +21,4 @@ class Solution:
 if __name__ =="__main__":
     solution =  Solution()
     print(solution.maxProfit(prices= [7,1,5,3,6,4]))
+    
