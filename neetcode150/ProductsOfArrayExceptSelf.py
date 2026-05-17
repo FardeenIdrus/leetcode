@@ -20,4 +20,4 @@ if __name__ == "__main__":
     print(sol.productExceptSelf([2,3,4,5]))
     
 #Time complexity : O(n) -> only visit each element in the list once
-# Space complexity: O(1) -> one extra variable that remains constant sized
+# Space complexity: O(1) -> one extra variable that remains constant sized 

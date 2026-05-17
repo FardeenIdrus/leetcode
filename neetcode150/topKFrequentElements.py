@@ -1,37 +1,35 @@
-from typing import List 
+from typing import List
 from collections import defaultdict
+
 class Solution:
-    def topKFrequent(self, nums:List[int], k:int) -> List[int]:
-        #initialise dict
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        
+    # Query = the top k frequent numbers (key), Value = The numbers that repeated k times
         dictionary = defaultdict(int)
-        #list returning the top k frequent elements
-        output_list = list()
+        output_list = []
+    #first loop through the list of numbers and assign a count for each number. Key = number, Value = number of times it occured
         for i in range(len(nums)):
-            #increment count for num[i]. key = number, value = count of the number
-            dictionary[nums[i]] +=1    
-            #create a new dictionary as a tuple in descending order of frequency
-            #dictionary.items() = returns the (key,value) pair as tuples
-            # key = lambdax:x[1] sorts by the second element in the tuple (the count)
-            #reverse = True : sorts by descending order of the count    
-        new_dict = sorted(dictionary.items(), key = lambda x:x[1], reverse = True)
+            dictionary[nums[i]] +=1
+        
+    
+        sorted_dict = sorted(dictionary.items(), key = lambda x:x[1], reverse = True)
+        
         for i in range(k):
-            #append the top k numebers
-            #[i][0]. i -> points to which tuple, [0] -> points to index 0 in tuple i
-            output_list.append(new_dict[i][0])
-        return output_list
-           
-
-#Time complexity: O(n log n)
-     
-        # O(n) -> for looping through each element in the array
-        # O(n log n) -> for sorting 
-        # O(n) dominates
-
-#Space complexity: dictionary can hold up to n distincty numbers -> O(n) 
-                    # output list holds k numbers and since k<= n, the dominant term is O(n)
-#Space complexity = O(n)
-
+            output_list.append(sorted_dict[i][0])
+        return  output_list
+        
 
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.topKFrequent([1,2,2,3,3,3,4], 2))
+    print(sol.topKFrequent([1,2,2,3,3], k = 2))
+
+#Time complexity: O(n log n) -> worst case where all elements are unique
+
+#first for loop : Access each element in the dictionary once and increment count -> O(n)
+#sort function : sorting items by their count : O(m log m) where m is the number of unique elements
+# O(m log m) dominates
+
+#Space complexity: O(m) 
+
+# dictionary of size m (number of unique elements)
+# worst case m = n (all elements are unique)
