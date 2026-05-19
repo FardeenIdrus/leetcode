@@ -1,2 +1,2 @@
 
-    sol = Solution()
+            print(i)
