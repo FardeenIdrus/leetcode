@@ -11,8 +11,8 @@ class Solution:
         for i in range(len(nums)):
             dictionary[nums[i]] +=1
         
-    
         sorted_dict = sorted(dictionary.items(), key = lambda x:x[1], reverse = True)
+        
         
         for i in range(k):
             output_list.append(sorted_dict[i][0])
