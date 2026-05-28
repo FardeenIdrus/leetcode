@@ -19,3 +19,4 @@ if __name__ == "__main__":
     sol = Solution()
     print(sol.productExceptSelf([1,2,3,4]))
     print(sol.productExceptSelf([-1,1,0,-3,3]))
+    print(sol.productExceptSelf([2]))
