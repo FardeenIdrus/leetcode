@@ -11,11 +11,15 @@ class Solution:
         
         for i in range(len(sorted_list)-1):
             if sorted_list[i+1][0] <= end_interval:
+                # if overlap, we extend our interval window
                 end_interval = max(end_interval,sorted_list[i+1][1])
             else:
+                #no overlap 
                 overlap_list.append([start_interval, end_interval])
+                # new start and end interval values for new intervals
                 start_interval = sorted_list[i+1][0]
                 end_interval =  sorted_list[i+1][1]
+        # Append the last merged interval in the input list as the for loop ends before the last elemtn
         overlap_list.append([start_interval, end_interval])
 
 
@@ -25,7 +29,7 @@ class Solution:
 # sorted: O(n log n), for loop visits each element in the list once therefore O(n), where n is the number of elements in the Input List
 
 # Space compleixty: O(n) - sorted_list is the additional memory used with size O(n) where n is the number of elements in the Input List
-    
+     
 if __name__ == "__main__":
     sol = Solution()
     print(sol.merge([[1,3],[2,6],[5,8]]))
