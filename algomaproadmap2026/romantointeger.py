@@ -27,3 +27,4 @@ if __name__ == "__main__":
 
 # Space complexity : O(1) -> Mapping dictionary does not grow with input size 
 # num_dict has a fixed 7 entires regardless. of input size
+#test
