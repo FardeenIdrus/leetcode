@@ -2,7 +2,7 @@
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
         
-        shortest_word = (min(strs, key = len))
+        shortest_word = min(strs, key = len)
     
         # Loop through each column from 0, to the last column of the shortest word
         for column in range(len(shortest_word)):
