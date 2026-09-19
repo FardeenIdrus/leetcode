@@ -15,8 +15,6 @@ for tweet in tweets:
 counts = Counter(all_hashtags)
 
 
-counts = Counter(all_hashtags)
-
 print(counts.most_common(1))
 
 
