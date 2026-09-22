@@ -47,10 +47,11 @@ class Solution:
         return islands
     
 # Time complexity: O(M x N), where M is the number of rows and N is the number of columns.
-# The main loop visits every cell once. recursive_dfs only runs its body on a cell the
-# first time that cell is reached, because the visited check blocks every later call on
-# that same cell. So across the whole program, each cell is fully processed exactly once,
-# giving O(M x N) total work.
+# Each cell can be checked more than once - once by the main loop, and up to 4 more times
+# as a neighbour of adjacent cells calling recursive_dfs - but each of those checks is O(1),
+# and a cell only gets fully explored (marked visited, recursed into) the first time it's
+# reached. Since every cell is checked at most a small constant number of times (5), the
+# total work stays proportional to M x N, giving O(M x N) overall.
 
 # Space complexity: O(M x N).
 # 1) visited_set: in the worst case every cell is land, so all M x N cells get stored in it.
