@@ -30,5 +30,5 @@ if __name__ == "__main__":
 
 # Time complexity : O(n+m) -> Where n+m is the total number of characters in both input strings. Loop through each character in the input strings once
 
-# Space complexity : O(n) -> Where n is the number of characters in the jewel string.
-# The variable stone_jewel is constant in size, and does not grow with the length of the input strings. It is dominated by O(n)
+# Space complexity: O(n), where n is the number of unique characters in the jewel string. 
+# jewel_set scales with input size; stone_jewel is a single constant integer, so the overall space complexity is dominated by jewel_set.
