@@ -31,9 +31,6 @@ class Solution:
         
         
     
-    
-
-
 if __name__ == "__main__":
     sol = Solution()
     print(sol.validPath(3,[[0,1],[1,2],[2,0]], 0, 2))
