@@ -2,31 +2,31 @@
 class Solution:
     def minOperations(self, boxes: str) -> list[int]:
         
-        answer =[0 for _ in boxes]
+        # answer[i] = total moves needed to bring every ball to box i
+        answer = [0 for _ in boxes]
         
-        # left: number of balls behind box i (in boxes 0 to i-1)
+        # left: number of balls in the boxes before box i (boxes 0 to i-1)
         left = 0
         
-        # Count the balls, and compute answer[0]: a ball at position i costs i moves to reach box 0
+        # Pass 1: count all the balls, and compute answer[0] directly
+        # A ball at position i needs i moves to reach box 0, so answer[0] is the sum of all ball positions
         num_of_balls = 0
         for i in range(len(boxes)):
             if boxes[i] == "1":
-                num_of_balls +=1
-                answer[0] +=i 
+                num_of_balls += 1
+                answer[0] += i 
         
-    
-        
-        # Build each answer from the previous one
-        # Moving the target from box i-1 to box i makes each ball behind it 1 move farther (+left)
-        # and each ball at or ahead of it 1 move closer (-right)
+        # Pass 2: build answer[i] from answer[i-1], instead of recomputing from scratch
+        # Moving the target from box i-1 to box i changes every ball's distance by exactly 1:
+        #   each ball before box i ends up 1 move farther, so the total goes up by left
+        #   each ball at box i or after it ends up 1 move closer, so the total goes down by right
         for i in range(1, len(boxes)):
-            # boxes[i-1] is now behind box i, so a ball there joins left
+            # The ball at box i-1 (if there is one) is now before box i, so it joins left
             if boxes[i-1] == "1":
                 left += 1
-            # right: balls at box i or ahead (total balls minus left)
+            # Every ball is either before box i (left) or at/after it (right)
             right = num_of_balls - left
             answer[i] = answer[i-1] + left - right
-
         
         return answer
     
