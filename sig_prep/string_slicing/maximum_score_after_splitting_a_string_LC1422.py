@@ -36,6 +36,7 @@ class Solution:
                 maximum_score = max(maximum_score, left_score+right_score)
                 # Increment pointer to check the next pair of non-empty substrings
                 left_pointer +=1
+            
 
         return maximum_score
 
