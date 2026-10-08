@@ -5,7 +5,7 @@ class Solution:
         # in the zigzag. The row number goes down to the last row, then back up to row 0, and repeats.
         # At the end, read the rows from top to bottom.
         
-        # string_list[r] holds the characters that land on row r, in the order they are visited
+        # string_list[row] holds the characters that land on row r, in the order they are visited
         string_list = [[] for _ in range(numRows)]
         
         # The row the current character goes into (starts at the top row, 0)
