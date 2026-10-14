@@ -19,8 +19,8 @@ class Solution:
         # reverse() changes the list inside the dictionary directly, so nothing needs putting back.
         for key in diagonal_dict:
             if key % 2 == 0:
-                value = diagonal_dict[key]
-                value.reverse()
+                value = diagonal_dict[key].reverse()
+                #ßvalue.reverse()
 
         # Join all diagonals in key order into one list
         diagonal_list = list(itertools.chain.from_iterable(diagonal_dict.values()))
