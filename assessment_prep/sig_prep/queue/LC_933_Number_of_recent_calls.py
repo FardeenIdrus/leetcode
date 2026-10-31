@@ -28,10 +28,10 @@ class RecentCounter:
     # return len(self.queue): O(1)
     # The steps run one after the other, so one call costs O(1) + (its removals) + O(1), which is O(1) on average
 
-# Space complexity: O(W), where W is the number of requests inside the window
-    # self.queue: holds only the requests from the last 3000 ms
-    # t is strictly increasing, so at most 3001 requests fit in the window (a fixed limit)
-    # Total: O(W), and since W is at most 3001, this is effectively O(1)
+# Space complexity: O(W)
+# W = the number of pings in the queue at once, i.e. those within the last 3000 ms.
+# Older pings are popped. t is strictly increasing, so W is at most 3001,
+# which makes this effectively O(1).
 
 
 if __name__ == "__main__":

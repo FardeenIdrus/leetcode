@@ -1,6 +1,6 @@
-from tritwise_min import tritwise_min
-from sucessor import sucessor 
-from leq_bending_spoons import leq
+from bending_spoons.tritwise_min import tritwise_min
+from bending_spoons.sucessor import sucessor 
+from bending_spoons.leq_bending_spoons import leq
 
 def f(A,B):
 # The running minimum starts at A, since a is included
