@@ -9,7 +9,7 @@ class Solution:
         for u,v in edges:
             adj_list[u].append(v)
             adj_list[v].append(u)
-    
+            
         # Recursive DFS function
         def dfs(current_vertex):
         # Add the current vertex to the set of visited vertex 
@@ -53,3 +53,4 @@ if __name__ == "__main__":
 # visited set: O(V). At most every vertex
 # Recursion stack: O(V). Worst case is a chain, with all V vertices waiting on the stack at once
 # adj_list dominates, since the visited set and stack are both already covered by the O(V) part
+
