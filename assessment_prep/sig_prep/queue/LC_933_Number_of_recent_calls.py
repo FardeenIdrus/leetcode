@@ -33,7 +33,6 @@ class RecentCounter:
 # Older pings are popped. t is strictly increasing, so W is at most 3001,
 # which makes this effectively O(1).
 
-
 if __name__ == "__main__":
     sol = RecentCounter()
     print(sol.ping(1))     # expect 1
