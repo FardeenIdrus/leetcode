@@ -32,3 +32,4 @@ print(q[0])
 
 # Peek from the right (last element)
 print(q[-1])
+
